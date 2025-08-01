@@ -6,3 +6,11 @@
     padding: 50px 0;
   }
 }
+
+@media (max-width: 900px) {
+  .home-page-content {
+    .genre-filter-wrapper {
+      padding: 20px 0;
+    }
+  }
+}

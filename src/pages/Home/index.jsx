@@ -11,6 +11,8 @@ import Pagination from "@/components/Pagination";
 
 import { getMovies, getMovieGenres } from "@/services/movies";
 
+import { scrollToTop } from "@/utils/scrollToTop";
+
 import "./styles.scss";
 
 export default function HomePage() {
@@ -49,6 +51,11 @@ export default function HomePage() {
     console.log(genresIds.join(","));
   };
 
+  const onChangePage = (p) => {
+    setPage(p);
+    scrollToTop();
+  };
+
   useEffect(() => {
     setSelectedGenres(genreFilter.split(",").map(Number));
     setCurrentPage(page);
@@ -80,7 +87,7 @@ export default function HomePage() {
           page={currentPage}
           total_pages={movies.total_pages}
           total_results={movies.total_results}
-          onPageChange={(p) => setPage(p)}
+          onPageChange={onChangePage}
         />
       </div>
     </div>

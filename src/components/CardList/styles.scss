@@ -1,5 +1,4 @@
 .card-list {
-  padding: 16px;
   .card-list-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -40,6 +39,36 @@
         font-size: 16px;
         font-weight: 300;
         color: var(--text-color);
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .card-list {
+    .card-list-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .card-item {
+    width: 100%;
+    .card-wrapper {
+      .card-image-wrapper {
+        &:hover {
+          .card-image {
+            transform: unset;
+          }
+        }
+        .card-image {
+          height: 245px;
+        }
+      }
+      a {
+        h4 {
+          font-size: 14px;
+        }
       }
     }
   }
