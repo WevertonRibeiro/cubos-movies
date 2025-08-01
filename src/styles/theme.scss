@@ -1,25 +1,37 @@
 :root {
-  --bg-color: #f2f4f7;
-  --text-color: #080809;
+  --bg-color: #fff;
+  --text-color: #0d0c22;
 
-  --header-background: #fff;
+  // Header
+  --logo-color: invert(1);
+  --search-background-color: #f3f3f6;
+  --search-text-color: var(--text-color);
+
+  // Generes filter
+  --genre-background-color-active: #f8f7f4;
+  --genre-background-color-active-hover: #f5f3f0;
+  --genre-btn-scroll-icon-color: initial;
+  --text-color-hover: #6e6d7a;
+  --text-color-active-hover: initial;
+
+  // Movies list
+  --title-card-text-color: #080809;
 }
 
 [data-theme="dark"] {
   --bg-color: #121113;
   --text-color: #ffffff;
-}
+  --title-card-text-color: #cccccc;
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto";
-}
+  // Header
+  --logo-color: initial;
+  --search-background-color: #1a191b;
+  --search-text-color: #eeeef0;
 
-body {
-  margin: 0;
-  background-color: var(--bg-color);
-  // background-image: url("../assets/images/background.png");
-  transition: background-color 0.3s, color 0.3s;
+  // Generes filter
+  --genre-background-color-active: #3b3c3e;
+  --genre-background-color-active-hover: #4c4d50;
+  --genre-btn-scroll-icon-color: invert(1);
+  --text-color-hover: rgba(255, 255, 255, 0.8);
+  --text-color-active-hover: white;
 }

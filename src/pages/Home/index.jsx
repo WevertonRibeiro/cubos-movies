@@ -1,39 +1,87 @@
 import { useEffect, useState } from "react";
 
+import { usePagination } from "@/hooks/usePagination";
+import { useSearch } from "@/hooks/useSearch";
+import { useGenreFilter } from "@/hooks/useGenreFilter";
+
+import GenresFilter from "@/components/GenresFilter";
+import CardList from "@/components/CardList";
+import CardItem from "@/components/CardList/CardItem";
 import Pagination from "@/components/Pagination";
 
-import api from "@/services/api";
+import { getMovies, getMovieGenres } from "@/services/movies";
+
 import "./styles.scss";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [genres, setGenres] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([]);
+  const { page, setPage } = usePagination();
+  const { search, setSearch } = useSearch();
+  const { genreFilter, setGenreFilter } = useGenreFilter();
 
-  const loadData = async () => {
-    const res = await api.get(`/discover/movie?page=${page}&limit=10`);
+  const loadMovies = async () => {
+    const pageToLoad = page || currentPage;
+
+    const res = await getMovies({
+      page: pageToLoad,
+      search: search,
+      genres: genreFilter,
+    });
+
     if (!res) return;
-    console.log(res);
     setMovies(res.data);
   };
 
+  const loadGenres = async () => {
+    const genresResponse = await getMovieGenres();
+
+    if (!genresResponse) return;
+    setGenres(genresResponse.data.genres);
+  };
+
+  const onSelectGenre = (genresIds) => {
+    setSelectedGenres(genresIds);
+    setGenreFilter(genresIds.join(","));
+    console.log(genresIds.join(","));
+  };
+
   useEffect(() => {
-    loadData();
-  }, [page]);
+    setSelectedGenres(genreFilter.split(",").map(Number));
+    setCurrentPage(page);
+    loadMovies();
+    loadGenres();
+  }, [page, search, genreFilter]);
 
   return (
-    <>
-      <h1>Filmes</h1>
-      <ul>
-        {movies?.results?.map((m) => (
-          <li key={m.id}>{m.title}</li>
-        ))}
-      </ul>
-      <Pagination
-        page={page}
-        total_pages={movies.total_pages}
-        total_results={movies.total_results}
-        onPageChange={setPage}
-      />
-    </>
+    <div className="home-page-content">
+      <div className="cubos-container">
+        <div className="genre-filter-wrapper">
+          <GenresFilter
+            genres={genres}
+            selectedGenres={selectedGenres}
+            onSelect={(genresIds) => onSelectGenre(genresIds)}
+          />
+        </div>
+
+        <CardList>
+          {movies?.results?.map((movie) => (
+            <CardItem
+              key={movie.id}
+              title={movie.title}
+              image={movie.poster_path}
+            />
+          ))}
+        </CardList>
+        <Pagination
+          page={currentPage}
+          total_pages={movies.total_pages}
+          total_results={movies.total_results}
+          onPageChange={(p) => setPage(p)}
+        />
+      </div>
+    </div>
   );
 }
