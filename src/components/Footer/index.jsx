@@ -1,3 +1,11 @@
+import "./styles.scss";
+
 export default function Footer() {
-  return <h1>Footer</h1>;
+  return (
+    <footer className="footer-wrapper">
+      <h2>
+        2025 © Todos os direitos reservados a <strong>Cubos Movies</strong>
+      </h2>
+    </footer>
+  );
 }

@@ -1,5 +1,10 @@
 import React from "react";
 
+import chevronLeft from "@/assets/icons/chevron-left.svg";
+import chevronRight from "@/assets/icons/chevron-right.svg";
+
+import "./styles.scss";
+
 export default function Pagination({
   page,
   total_pages,
@@ -36,36 +41,31 @@ export default function Pagination({
   const pages = getPages();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        gap: "10px",
-        margin: "20px 0",
-      }}
-    >
-      <button disabled={page === 1} onClick={handlePrev}>
-        ← Anterior
+    <div className="pagination-wrapper">
+      <button
+        disabled={page === 1}
+        className="pagination-button"
+        onClick={handlePrev}
+      >
+        <img src={chevronLeft} />
       </button>
 
       {pages.map((p) => (
         <button
           key={p}
           onClick={() => onPageChange(p)}
-          style={{
-            padding: "6px 12px",
-            background: p === page ? "#333" : "#eee",
-            color: p === page ? "#fff" : "#000",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-          }}
+          className={`pagination-button ${p === page ? "active" : ""}`}
         >
           {p}
         </button>
       ))}
 
-      <button disabled={page === total_pages} onClick={handleNext}>
-        Próxima →
+      <button
+        disabled={page === total_pages}
+        className="pagination-button"
+        onClick={handleNext}
+      >
+        <img src={chevronRight} />
       </button>
     </div>
   );

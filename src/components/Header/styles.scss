@@ -23,21 +23,29 @@
         font-weight: 600;
       }
     }
-    .search-wrapper {
-    }
-    .btn-toggle-theme {
-      background: #b744f714;
-      border: unset;
-      width: 64px;
-      height: 48px;
+    .btns-wrapper {
+      min-width: 160px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-      cursor: pointer;
-      img {
-        width: 24px;
-        height: 24px;
+      justify-content: space-between;
+      .btn {
+        background: none;
+        border: unset;
+        width: 64px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        cursor: pointer;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .btn-filters {
+        img {
+          filter: var(--filter-icon-color);
+        }
       }
     }
   }

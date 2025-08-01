@@ -43,6 +43,7 @@ export default function HomePage() {
   };
 
   const onSelectGenre = (genresIds) => {
+    setSearch("");
     setSelectedGenres(genresIds);
     setGenreFilter(genresIds.join(","));
     console.log(genresIds.join(","));

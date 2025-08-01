@@ -9,6 +9,7 @@ import InputSearch from "../InputSearch";
 import logo from "@/assets/images/cubos-logo.png";
 import sunIcon from "@/assets/icons/sun.svg";
 import moonIcon from "@/assets/icons/moon.svg";
+import filterIcon from "@/assets/icons/filter.svg";
 
 import "./styles.scss";
 
@@ -19,27 +20,20 @@ export default function Header() {
 
   const navigate = useNavigate();
 
-  const goToHome = () => {
-    setSearch("");
-    setInputSearch("");
-    navigate("/");
-  };
-
   const handleSearch = () => {
     setSearch(inputSearch);
   };
 
   useEffect(() => {
     setInputSearch(search || "");
-  }, []);
+  }, [search]);
 
   return (
     <header className="cubos-header">
       <div className="cubos-container">
         <div className="header-wrapper">
           <div className="logo-wrapper">
-            <img src={logo} onClick={() => goToHome()} />
-            {/* <h2>Movies</h2> */}
+            <img src={logo} onClick={() => navigate("/")} />
           </div>
           <div className="search-wrapper">
             <InputSearch
@@ -48,9 +42,18 @@ export default function Header() {
               handleSearch={() => handleSearch()}
             />
           </div>
-          <button className="btn-toggle-theme" onClick={toggleTheme}>
-            {theme === "light" ? <img src={moonIcon} /> : <img src={sunIcon} />}
-          </button>
+          <div className="btns-wrapper">
+            <button className="btn btn-filters">
+              <img src={filterIcon} />
+            </button>
+            <button className="btn btn-toggle-theme" onClick={toggleTheme}>
+              {theme === "light" ? (
+                <img src={moonIcon} />
+              ) : (
+                <img src={sunIcon} />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </header>

@@ -6,6 +6,7 @@
   --logo-color: invert(1);
   --search-background-color: #f3f3f6;
   --search-text-color: var(--text-color);
+  --filter-icon-color: initial;
 
   // Generes filter
   --genre-background-color-active: #f8f7f4;
@@ -16,6 +17,9 @@
 
   // Movies list
   --title-card-text-color: #080809;
+
+  // Footer
+  --border-footer-color: #4c4d5030;
 }
 
 [data-theme="dark"] {
@@ -27,6 +31,7 @@
   --logo-color: initial;
   --search-background-color: #1a191b;
   --search-text-color: #eeeef0;
+  --filter-icon-color: invert(1);
 
   // Generes filter
   --genre-background-color-active: #3b3c3e;
@@ -34,4 +39,7 @@
   --genre-btn-scroll-icon-color: invert(1);
   --text-color-hover: rgba(255, 255, 255, 0.8);
   --text-color-active-hover: white;
+
+  // Footer
+  --border-footer-color: #f1e6fd30;
 }
