@@ -16,8 +16,8 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      // border-radius: 5px;
       cursor: pointer;
+      box-shadow: 0 7px 17px -8px rgba(0, 0, 0, 0.8);
 
       a {
         width: 100%;
@@ -41,7 +41,7 @@
     a {
       text-decoration: none;
       h4 {
-        margin-top: 6px;
+        margin-top: 16px;
         margin-bottom: 2px;
         font-size: 16px;
         font-weight: 300;
