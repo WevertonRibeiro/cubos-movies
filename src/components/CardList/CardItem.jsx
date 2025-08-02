@@ -1,18 +1,22 @@
+import { Link } from "react-router-dom";
+
 import getImageUrl from "@/utils/getImageUrl";
 
-export default function CardItem({ title, image }) {
+export default function CardItem({ title, image, linkTo }) {
   return (
     <div className="card-item">
       <div className="card-wrapper">
         <div className="card-image-wrapper">
-          <div
-            className="card-image"
-            style={{ backgroundImage: `url(${getImageUrl(image, 500)})` }}
-          ></div>
+          <Link to={linkTo}>
+            <div
+              className="card-image"
+              style={{ backgroundImage: `url(${getImageUrl(image, 500)})` }}
+            ></div>
+          </Link>
         </div>
-        <a href="#">
+        <Link to={linkTo}>
           <h4>{title}</h4>
-        </a>
+        </Link>
       </div>
     </div>
   );

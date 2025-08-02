@@ -1,6 +1,7 @@
 :root {
   --bg-color: #fff;
   --text-color: #0d0c22;
+  --text-white: #f0f0f0;
 
   // Header
   --logo-color: invert(1);
@@ -24,8 +25,7 @@
 
 [data-theme="dark"] {
   --bg-color: #121113;
-  --text-color: #ffffff;
-  --title-card-text-color: #cccccc;
+  --text-color: #f0f0f0;
 
   // Header
   --logo-color: initial;
@@ -39,6 +39,9 @@
   --genre-btn-scroll-icon-color: invert(1);
   --text-color-hover: rgba(255, 255, 255, 0.8);
   --text-color-active-hover: white;
+
+  // Movies list
+  --title-card-text-color: #cccccc;
 
   // Footer
   --border-footer-color: #f1e6fd30;

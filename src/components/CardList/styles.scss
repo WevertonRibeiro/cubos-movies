@@ -16,19 +16,26 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      border-radius: 5px;
+      // border-radius: 5px;
       cursor: pointer;
-      &:hover {
+
+      a {
+        width: 100%;
         .card-image {
-          transform: scale(1.1);
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s ease-in-out;
+          width: 100%;
+          height: 355px;
         }
       }
-      .card-image {
-        background-size: cover;
-        background-position: center;
-        transition: transform 0.3s ease-in-out;
-        width: 100%;
-        height: 355px;
+
+      &:hover {
+        a {
+          .card-image {
+            transform: scale(1.1);
+          }
+        }
       }
     }
     a {
@@ -56,13 +63,17 @@
     width: 100%;
     .card-wrapper {
       .card-image-wrapper {
-        &:hover {
+        a {
           .card-image {
-            transform: unset;
+            height: 245px;
           }
         }
-        .card-image {
-          height: 245px;
+        &:hover {
+          a {
+            .card-image {
+              transform: unset;
+            }
+          }
         }
       }
       a {

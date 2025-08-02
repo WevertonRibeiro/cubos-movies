@@ -21,7 +21,10 @@ export default function Header() {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    setSearch(inputSearch);
+    navigate({
+      pathname: "/",
+      search: `?search=${encodeURIComponent(inputSearch)}`,
+    });
   };
 
   useEffect(() => {

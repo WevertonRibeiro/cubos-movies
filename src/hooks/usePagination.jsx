@@ -8,7 +8,7 @@ export const usePagination = (deafultPage = 1) => {
   const allParams = Object.fromEntries(params.entries());
 
   const setPage = (page) => {
-    setParams({ ...allParams, page });
+    setParams({ ...allParams, page: encodeURIComponent(page) });
   };
 
   return { page, setPage };

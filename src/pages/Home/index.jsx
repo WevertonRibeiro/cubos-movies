@@ -78,6 +78,7 @@ export default function HomePage() {
           {movies?.results?.map((movie) => (
             <CardItem
               key={movie.id}
+              linkTo={`/movie/${movie.id}`}
               title={movie.title}
               image={movie.poster_path}
             />

@@ -6,7 +6,7 @@ export const useGenreFilter = () => {
   const genreFilter = params.get("with_genres") || "";
 
   const setGenreFilter = (genres) => {
-    setParams({ ["with_genres"]: genres });
+    setParams({ ["with_genres"]: encodeURIComponent(genres) });
   };
 
   return { genreFilter, setGenreFilter };

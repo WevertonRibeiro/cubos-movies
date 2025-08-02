@@ -16,6 +16,18 @@ export const getMovies = async ({ page = 1, search, genres }) => {
   return res;
 };
 
+export const getMovie = async (id) => {
+  const res = await api.get(`/movie/${id}`);
+  if (!res) return;
+  return res;
+};
+
+export const getMovieVideos = async (id) => {
+  const res = await api.get(`/movie/${id}/videos`);
+  if (!res) return;
+  return res;
+};
+
 export const getMovieGenres = async () => {
   const res = await api.get("/genre/movie/list");
   if (!res) return;

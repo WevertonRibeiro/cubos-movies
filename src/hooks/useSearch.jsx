@@ -6,7 +6,7 @@ export const useSearch = () => {
   const search = params.get("search");
 
   const setSearch = (search) => {
-    setParams({ search: search });
+    setParams({ search: encodeURIComponent(search) });
   };
 
   return { search, setSearch };
