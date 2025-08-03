@@ -43,7 +43,7 @@ cd cubos-movies
 ```bash
 npm install
 ```
-# ou
+ou
 ```bash
 yarn install
 ```
@@ -62,7 +62,7 @@ VITE_API_KEY=sua_api_key_aqui
 ```bash
 npm run dev
 ```
-# ou
+ou
 ```bash
 yarn dev
 ```
