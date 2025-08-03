@@ -33,6 +33,8 @@ Inclui sistema de tema claro/escuro, paginação, filtros por gênero e página 
 
 ```bash
 git clone https://github.com/WevertonRibeiro/cubos-movies.git
+```
+```bash
 cd cubos-movies
 ```
 
@@ -40,7 +42,9 @@ cd cubos-movies
 
 ```bash
 npm install
+```
 # ou
+```bash
 yarn install
 ```
 
@@ -57,7 +61,9 @@ VITE_API_KEY=sua_api_key_aqui
 
 ```bash
 npm run dev
+```
 # ou
+```bash
 yarn dev
 ```
 
