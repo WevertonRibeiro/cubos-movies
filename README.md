@@ -31,9 +31,10 @@ Inclui sistema de tema claro/escuro, paginação, filtros por gênero e página 
 
 1. Clone o repositório
 
-````bash
+```bash
 git clone https://github.com/WevertonRibeiro/cubos-movies.git
 cd cubos-movies
+```
 
 2. Instale as dependências
 
@@ -41,7 +42,7 @@ cd cubos-movies
 npm install
 # ou
 yarn install
-
+```
 
 3. Configure as variáveis de ambiente
 
@@ -50,7 +51,7 @@ Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 ```bash
 VITE_API_BASE_URL=https://api.themoviedb.org/3
 VITE_API_KEY=sua_api_key_aqui
-
+```
 
 4. Inicie o servidor de desenvolvimento
 
@@ -58,12 +59,13 @@ VITE_API_KEY=sua_api_key_aqui
 npm run dev
 # ou
 yarn dev
-
+```
 
 5. Abra seu navegador e acesse
 
 ```bash
 http://localhost:5173/
+```
 
 ---
 
@@ -74,4 +76,3 @@ http://localhost:5173/
 <img width="1902" height="906" alt="image" src="https://github.com/user-attachments/assets/c1360716-d55c-4367-ae74-c189c594eb1a" />
 
 ## Obrigado por visitar o projeto! 😊
-````
