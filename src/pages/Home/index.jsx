@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import { usePagination } from "@/hooks/usePagination";
 import { useSearch } from "@/hooks/useSearch";
 import { useGenreFilter } from "@/hooks/useGenreFilter";
@@ -27,11 +29,7 @@ export default function HomePage() {
   const loadMovies = async () => {
     const pageToLoad = page || currentPage;
 
-    const res = await getMovies({
-      page: pageToLoad,
-      search: search,
-      genres: genreFilter,
-    });
+    const res = await getMovies(pageToLoad, search, genreFilter);
 
     if (!res) return;
     setMovies(res.data);
@@ -91,6 +89,9 @@ export default function HomePage() {
           onPageChange={onChangePage}
         />
       </div>
+      <Link to="/fidelidade" className="fn-btn">
+        Modo Fidelidade
+      </Link>
     </div>
   );
 }

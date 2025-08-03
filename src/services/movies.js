@@ -1,6 +1,6 @@
 import api from "@/services/api";
 
-export const getMovies = async ({ page = 1, search, genres }) => {
+export const getMovies = async (page, search, genres) => {
   if (!search) {
     const res = await api.get("/discover/movie", {
       params: { page, ["with_genres"]: genres },

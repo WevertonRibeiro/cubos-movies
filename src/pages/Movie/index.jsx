@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+
 import { getMovie, getMovieVideos } from "@/services/movies";
 
 import { dateFormat } from "@/utils/dateFormat";
@@ -114,6 +116,9 @@ export default function MoviePage() {
           </section>
         </div>
       </div>
+      <Link to="/fidelidade" className="fn-btn">
+        Modo Fidelidade
+      </Link>
     </div>
   );
 }
