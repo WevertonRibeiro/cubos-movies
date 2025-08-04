@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .content {
+    flex: 1;
+  }
+}
+
+.fn-btn {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: white;
+  background-color: black;
+  padding: 16px;
+  font-size: 14px;
+}

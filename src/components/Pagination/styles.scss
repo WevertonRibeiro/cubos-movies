@@ -1,0 +1,25 @@
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  .pagination-button {
+    min-width: 41px;
+    padding: 6px 12px;
+    font-weight: 600;
+    background: none;
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    img {
+      filter: var(--genre-btn-scroll-icon-color);
+    }
+    &.active {
+      background: var(--genre-background-color-active);
+      &:hover {
+        background: var(--genre-background-color-active-hover);
+      }
+    }
+  }
+}

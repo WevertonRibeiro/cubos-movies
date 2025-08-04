@@ -1,0 +1,16 @@
+.home-page-content {
+  padding: 16px;
+  .genre-filter-wrapper {
+    margin: 0 auto;
+    max-width: 1101px;
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page-content {
+    .genre-filter-wrapper {
+      padding: 20px 0;
+    }
+  }
+}
